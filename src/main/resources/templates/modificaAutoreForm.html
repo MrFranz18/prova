@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<title>Modifica</title>
+</head>
+<body style="background-color:lightblue">
+    <div class="container">
+    <div class="page-header">
+		<h1 style="color:red; size:40px; text-align:left;">Modifica Autore</h1>
+	</div>
+	<form action="#" th:action="@{/confermaModifica}" th:object="${autoreSelezionato}"
+		method="post">
+		<div>
+			<div>
+				<span th:text="#{label.nome}"> Nome: </span> <span><input
+					type="text" th:field="*{nome}" /></span> <span
+					th:if="${#fields.hasErrors('nome')}" th:text="#{label.mandatory}">Error</span>
+			</div>
+			<br></br>
+			<div>
+				<span th:text="#{label.cognome}"> Cognome: </span> <span><input
+					type="text" th:field="*{cognome}" /></span> <span
+					th:if="${#fields.hasErrors('cognome')}"
+					th:text="#{label.mandatory}">Error</span>
+			</div>
+			<br></br>
+			<div>
+				<span th:text="#{label.dataNascita}">Data di nascita: </span> <span><input
+					type="text" th:field="*{dataNascita}" /></span> <span
+					th:if="${#fields.hasErrors('dataNascita')}"
+					th:text="#{label.number}">Error</span>
+			</div>
+			<br></br>
+                <div>
+                    <span th:text="#{label.dataMorte}"> Data di morte: </span>
+                    <span><input type="text" th:field="*{dataMorte}" /></span>
+                    <span th:if="${#fields.hasErrors('dataMorte')}" th:text="#{label.number}">Error</span>
+                </div> 
+ 			<br></br>
+			<div>
+				<span th:text="#{label.nazionalita}"> Nazionalita': </span> <span><input
+					type="text" th:field="*{nazionalita}" /></span> <span
+					th:if="${#fields.hasErrors('nazionalita')}"
+					th:text="#{label.mandatory}">Error</span>
+			</div>
+			<br></br>
+			<div>
+				<span><button type="submit">Modifica</button></span>
+			</div>
+		</div>
+		<input type="hidden" value="${autore.id}" th:field="*{id}" name="id"/> 
+	</form>
+</div>
+</body>
+</html>

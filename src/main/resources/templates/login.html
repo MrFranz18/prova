@@ -1,0 +1,52 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<title>Benvenuto</title>
+</head>
+<body style="background-image: url(http://www.artecontadina.it/images/grafica/sfondo.jpg); background-repeat: repeat-x;">
+    <div class="container">
+    <h1 style="color:green; font:Baskerville; size:40px; text-align:center;"> Benvenuto nel sito della galleria d'arte ACMEArt! </h1>
+    <div align="center">
+    <a href="/listaQuadri"><img th:src="@{https://st.ilfattoquotidiano.it/wp-content/uploads/2014/12/gnam-675.jpg}"/></a>
+    </div>
+    <div align="center">
+    <p style="color:green; size:56px;">Clicca qui sopra per visualizzare la nostra collezione
+    Galleria d'arte "La Gioconda"
+    <br></br>
+    Indirizzo: Via Tal dei Tali ,8 (RM)
+    <br></br>
+    Telefono: 06 XXXXXXX
+    <br></br>
+    Orari: lun/ven 10:00 / 20:00 sab 10:00 / 23:00 dom CHIUSO
+    </p> 
+    </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+		<div class="jumbotron" style="padding-top:5px; padding-bottom:5px; color:green;">
+		<form name="f" th:action="@{/login}" method="post">
+			<fieldset>
+				<legend style="color:green;">Login Amministratore</legend>
+				<div th:if="${param.error}" class="alert alert-error">Username o password non validi</div>
+				<div th:if="${param.logout}" class="alert alert-success">You
+					have been logged out.</div>
+				<label for="username">Username</label> <input type="text"
+					id="username" name="username" /> <label for="password">Password</label>
+				<input type="password" id="password" name="password" />
+				<div class="form-actions">
+					<button type="submit" class="btn-success">Log in</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </div>
+</body>
+</html>

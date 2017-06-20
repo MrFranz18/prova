@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Conferma autore</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	</head>
+	<body style="background-color:lightblue">>
+ 	<div class="container">
+    <div class="page-header">
+		<h1 style="color:red; size:40px; text-align:left;">Conferma Inserimento</h1>
+	</div>
+	<div>
+    	<p th:text="'Nome: ' + ${autore.nome}" />
+    </div>
+    <br></br>
+	<div>
+    	<p th:text="'Cognome: ' + ${autore.cognome}" />
+    </div>
+    <br></br>
+	<div>
+    	<p th:text="'Nazionalit&agrave; : ' + ${autore.nazionalita}" />	
+    </div>
+    <br></br>
+	<div>
+    	<p th:text="'Data di nascita: ' + ${autore.dataNascita.date} + '/' + (${autore.dataNascita.month}+1) + '/' +(${autore.dataNascita.year}+1900)" />	
+    </div>
+    <br></br>
+    <div>
+    	<p th:text="'Data di morte: ' + ${autore.dataMorte.date} + '/' + (${autore.dataMorte.month}+1) + '/' +(${autore.dataMorte.year}+1900)" />	
+    </div>
+    <br></br>
+	<form>
+		<button formaction = "/" type = "submit" formmethod = "GET">Torna alle operazioni</button>
+	</form>
+	</div>
+</body>
+</html>

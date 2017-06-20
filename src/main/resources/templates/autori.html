@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista autori</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+    <body>
+      <ul th:each="autore,iterationStatus  : ${autori}">
+        <li><a href="autore?id=${autore.id}"> ${autore.cognome} </a>
+      </ul>
+     <form>
+		<button formaction = "/" type = "submit" formmethod = "GET">Torna alle operazioni</button>
+	</form>
+</body>
+
+</html>

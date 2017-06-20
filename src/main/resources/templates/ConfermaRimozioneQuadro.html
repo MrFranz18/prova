@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<title>Conferma</title>
+</head>
+<body style="background-color:lightblue">
+    <div class="container">
+    <div class="page-header">
+		<h1 style="color:red; size:40px; text-align:left;">Conferma eliminazione</h1>
+	</div>
+<div>
+    	<p th:text="'Titolo: ' + ${quadro.titolo}" />
+    </div>
+    <br></br>
+	<div>
+    	<p th:text="'Anno: ' + ${quadro.anno}" />
+    </div>
+    <br></br>
+	<div>
+    	<p th:text="'Tecnica: ' + ${quadro.tecnica}" />	
+    </div>
+    <br></br>
+	<div>
+    	<p th:text="'Dimensioni: ' + ${quadro.dimensioni}" />	
+      </div>
+     <br></br>
+    <form>
+		<button formaction = "/" type = "submit" formmethod = "GET">Torna alla home!</button>
+	</form>
+	</div>
+</body>
+</html>
